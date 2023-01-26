@@ -118,8 +118,7 @@ optgroup,
 select,
 textarea {
   color: inherit;
-  font: inherit;
-  margin: 0;
+  margin: 0px 0 0 245px;
 }
 button {
   overflow: visible;
@@ -1374,6 +1373,7 @@ a.text-danger:focus {
 .bg-primary {
   color: #fff;
   background-color: #337ab7;
+    height: 45px;
 }
 a.bg-primary:hover,
 a.bg-primary:focus {
@@ -1671,6 +1671,8 @@ pre code {
   min-height: 1px;
   padding-right: 15px;
   padding-left: 15px;
+    top: 11px;
+    left: 91px;
 }
 .col-xs-1,
 .col-xs-2,
@@ -2608,6 +2610,8 @@ label {
   max-width: 100%;
   margin-bottom: 5px;
   font-weight: 700;
+    width: 214px;
+    height: 26px;
 }
 input[type="search"] {
   -webkit-box-sizing: border-box;
@@ -2657,8 +2661,8 @@ output {
 }
 .form-control {
   display: block;
-  width: 100%;
-  height: 34px;
+  width: 21%;
+  height: 16px;
   padding: 6px 12px;
   font-size: 14px;
   line-height: 1.42857143;
@@ -3214,6 +3218,7 @@ fieldset[disabled] .btn-default.focus {
   color: #fff;
   background-color: #337ab7;
   border-color: #2e6da4;
+    width: 81px;
 }
 .btn-primary:focus,
 .btn-primary.focus {
@@ -5041,6 +5046,8 @@ a.badge:focus {
 .jumbotron h1,
 .jumbotron .h1 {
   color: inherit;
+    width: 319px;
+    height: 44px;
 }
 .jumbotron p {
   margin-bottom: 15px;
