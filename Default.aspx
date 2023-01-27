@@ -7,14 +7,12 @@
      <link href="css/styles.css" rel="stylesheet" type="text/css" />
     </head>
 
-    <body>
-
     <div class="jumbotron">
-        <h2>Formulario Registro</h2>
-        <p class="lead"></p>
-        <p></p>
+        <h1>Formulario Registro</h1> 
+        <p class="lead"></p> 
+        <p></p> 
 
-    </div> 
+    </div> <br>
     <div class="form-group">
     <label for="name">Nombre:</label>
     <input type="text" class="form-control" id="name" name="name">
@@ -112,6 +110,7 @@
        
 
         <div style="height: 42px">
+             
         
     <input type="button" value="Enviar" id="btn1" onclick="miFuncion()" /> 
 
@@ -119,7 +118,7 @@
 
         </div> 
 
-    </body>
+  
         
 
    <div class="row">
@@ -132,5 +131,5 @@
     </div>
 
     </div>
-    </div>
+   
 </asp:Content>
