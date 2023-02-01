@@ -46,6 +46,7 @@ namespace FormularioRegistro.aspx
         protected void btn1_Click(object sender, EventArgs e)
         {
             
+
         }
 
         protected void btn2_Click(object sender, EventArgs e)

@@ -4,122 +4,97 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <head>
-     <link href="css/styles.css" rel="stylesheet" type="text/css" />
+     <link rel="stylesheet" media="only screen and (max-width: 768px)" href="estilos.css">
     </head>
 
     <div class="jumbotron">
         <h1>Formulario Registro</h1> 
-        <p class="lead"></p> 
-        <p></p> 
 
-    </div> <br>
+    </div> 
     <div class="form-group">
     <label for="name">Nombre:</label>
-    <input type="text" class="form-control" id="name" name="name">
+        <asp:TextBox ID="txtname" CssClass ="form-control" runat="server"></asp:TextBox>
         </div>
 
     <div class="form-group">
     <label for="lastname">Apellido:</label>
-    <input type="text" class="form-control" id="lastname" name="lastname">
-</div>
+    <asp:TextBox ID="txtlastname" CssClass ="form-control" runat="server"></asp:TextBox>
+    </div>
 
     <div class="form-group">
     <label for="dni">DNI:</label>
-    <input type="text" class="form-control" id="dni" name="dni" maxlength="8" >
-</div>
+        <asp:TextBox ID="txtdni" CssClass ="form-control" runat="server"></asp:TextBox>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Falta DNI" ControlToValidate="txtdni" ></asp:RequiredFieldValidator>
+    </div>
 
     <div class="form-group">
-    <label for="exampleFormControlSelect1">Lugar de Nacimiento</label>
-    <select class="form-control" id="exampleFormControlSelect1" name="exampleFormControlSelect1">
-        <option>Argentina</option>
-        <option>Brasil</option>
-        <option>Chile</option>
-        <option>Uruguay</option>
-    </select>
-</div>
+        <label>Pais de Nacimiento</label>
+    <asp:DropDownList ID="DropDownList1" runat="server">
+  
+  <asp:ListItem Value="valor1">Argentina</asp:ListItem>
+  <asp:ListItem Value="valor2">Brasil</asp:ListItem>
+  <asp:ListItem Value="valor3">Chile</asp:ListItem>
+   <asp:ListItem Value="valor3">Uruguay</asp:ListItem>
+   </asp:DropDownList>
+
+
+    </div>
 
     <div class="form-group">
-    <label>Curso en Desarrollo:</label>
-    <div class="form-check">
-        &nbsp;<label class="form-check-label" for="exampleRadios1"><input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option4" checked="true">JAVA
-        </label>
+        <label>Curso en Desarrollo:</label>
+    <asp:RadioButtonList ID="miRadioButtonList" runat="server">
+    <asp:ListItem Value="valor1">JAVA</asp:ListItem>
+    <asp:ListItem Value="valor2">.NET</asp:ListItem>
+    <asp:ListItem Value="valor3">Diseño UX/UI</asp:ListItem>
+    </asp:RadioButtonList>
+
+
     </div>
-    <div class="form-check">
-        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-        <label class="form-check-label" for="exampleRadios2">
-            .NET
-        </label>
+    <div class="form-group">
+        <label>Conocimientos:</label>
+   <asp:CheckBoxList ID="CheckBoxList1" runat="server">
+   <asp:ListItem>HTML</asp:ListItem>
+   <asp:ListItem>Javascript</asp:ListItem>
+   <asp:ListItem>JQuery</asp:ListItem>
+   <asp:ListItem>CSS</asp:ListItem>
+   <asp:ListItem>.NET</asp:ListItem>
+   <asp:ListItem>SQL Server</asp:ListItem>
+</asp:CheckBoxList>
+
     </div>
-    <div class="form-check">
-        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
-        <label class="form-check-label" for="exampleRadios3">
-            Diseño UX/UI
-        </label> 
-    </div> <br>
-
-
-        <form>
-            <label>Conocimientos</label> <br>
-  <label>
-    <input type="checkbox" name="option1" value="value1"> HTML
-  </label>
-  <br>
-  <label>
-    <input type="checkbox" name="option2" value="value2"> Javascript
-  </label>
-  <br>
-  <label>
-    <input type="checkbox" name="option3" value="value3"> JQuery
-  </label>
-  <br>
-  <label>
-    <input type="checkbox" name="option4" value="value4"> CSS
-  </label>
-  <br>
-  <label>
-    <input type="checkbox" name="option5" value="value5"> .NET
-  </label> <br>
-           
-</form> <br>
-
-
+   
 <div class="form-group">
     <label for="email">Email:</label>
-    <input type="email" class="form-control" id="email" name="email">
-</div> <br>
+    <asp:TextBox ID="email" CssClass="form-control" runat="server"></asp:TextBox>
+</div> 
 
     <div class="form-group">
-    <label for="birthdate">Fecha de nacimiento:</label><input type="date" class="form-control" id="birthdate" name="birthdate">&nbsp;
-</div> <br>
+    <label for="birthdate">Fecha de nacimiento:</label>
+        <asp:TextBox ID="Fechanac" CssClass="form-control" runat="server"></asp:TextBox>
+    </div> 
 
     <div class="form-group">
     <label for="message">Otros conocimientos:</label>
-    <textarea class="form-control" rows="5" id="message" name="message"></textarea>
-</div> <br>
+    <asp:TextBox ID="otros" CssClass="form-control" runat="server"></asp:TextBox>
+    </div> 
 
     <div class="form-group">
     <label for="password">Contraseña: </label>
-&nbsp;<input type="password" class="form-control" id="password" name="password">
-</div> <br>
+        <asp:TextBox ID="password" runat="server" TextMode="Password"></asp:TextBox>
+    </div> 
 
-<div class="form-group">
+    <div class="form-group">
     <label for="confirm_password">Confirmar contraseña:</label>
-    <input type="password" class="form-control" id="confirm_password" name="confirm_password">
-    </div> <br>
+    <asp:TextBox ID="TextBox1" runat="server" TextMode="Password"></asp:TextBox>
+    </div> 
+     
 
-       
-
-        <div style="height: 42px">
-             
-        
-    <input type="button" value="Enviar" id="btn1" onclick="miFuncion()" /> 
-
-    <input type="button" value="Cancelar" id="btn2" onclick="miFuncion()" /> 
+      
+       <div class="form-group">             
+            <asp:Button ID="Enviar" runat="server" Text="Enviar" />
+            <asp:Button ID="Cancelar" runat="server" Text="Cancelar" />
 
         </div> 
-
-  
-        
 
    <div class="row">
         <div class="col-md-4">
@@ -130,6 +105,6 @@
         </div>
     </div>
 
-    </div>
+    
    
 </asp:Content>
