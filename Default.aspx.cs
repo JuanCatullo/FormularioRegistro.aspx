@@ -37,31 +37,79 @@ namespace FormularioRegistro.aspx
 
         string ValidarControles()
         {
-            return ""; //para que no de error la funcion
+            
             string sRetorno = "";
 
             if (txtdni.Text.Trim() == "")
             {
-                sRetorno += "Falta DNI";
+                sRetorno += "Falta DNI" + System.Environment.NewLine; 
                 txtdni.BorderColor = Color.Red;
                 lblerror.BackColor = Color.Red;
 
             }
             if (txtname.Text.Trim() == "")
             {
-                sRetorno += "Falta Nombre";
+                sRetorno += "Falta Nombre" + System.Environment.NewLine; 
                 txtdni.BorderColor = Color.Red;
                 lblerror.BackColor = Color.Red;
 
             }
             if (txtlastname.Text.Trim() == "")
             {
-                sRetorno += "Falta Apellido";
+                sRetorno += "Falta Apellido" + System.Environment.NewLine; 
                 txtdni.BorderColor = Color.Red;
                 lblerror.BackColor = Color.Red;
 
-                return sRetorno;
-        }   }
+                
+            }
+            if (email.Text.Trim() == "")
+            {
+                sRetorno += "Falta email" + System.Environment.NewLine ;
+                email.BorderColor = Color.Red;
+                lblerror.BackColor = Color.Red;
+            }
+            if (Fechanac.Text.Trim() == "")
+            {
+                sRetorno += "Falta Fecha de Nacimiento" + System.Environment.NewLine ;
+                Fechanac.BorderColor = Color.Red;
+                lblerror.BackColor = Color.Red;
+            }
+            if (password.Text.Trim() == "")
+            {
+                sRetorno += "Falta Contraseña" + System.Environment.NewLine ;
+                password.BorderColor = Color.Red;
+                lblerror.BackColor = Color.Red;
+            }
+
+            if (password.Text != confirm_password.Text)
+            {
+                lblerror.Text = "Las contraseñas no coinciden.";
+
+            }
+
+            return sRetorno;
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        }
+
 
 
     }    
