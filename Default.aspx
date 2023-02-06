@@ -37,16 +37,16 @@
 
     <div class="form-group">
         <label>Pais de Nacimiento</label>
-    <asp:DropDownList ID="DropDownList1" runat="server">
+    <asp:DropDownList ID="DropDownList1" runat="server">  
   
   <asp:ListItem Value="valor1">Argentina</asp:ListItem>
   <asp:ListItem Value="valor2">Brasil</asp:ListItem>
   <asp:ListItem Value="valor3">Chile</asp:ListItem>
    <asp:ListItem Value="valor3">Uruguay</asp:ListItem>
-   </asp:DropDownList>
+   </asp:DropDownList>  
 
 
-    </div>
+    </div>  
 
     <div class="form-group">
         <label>Curso en Desarrollo:</label>
@@ -125,5 +125,5 @@
 
     
    
-     </div>
+</div>
 </asp:Content>

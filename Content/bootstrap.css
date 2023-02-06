@@ -1073,7 +1073,7 @@ th {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     background-color: #C0C0C0;
-    color: #000000;
+    color: #C0C0C0;
 }
 *:before,
 *:after {
@@ -2758,7 +2758,7 @@ textarea.form-control {
 }
 .form-group {
     margin-bottom: 0px;
-    background-color: #C0C0C0;
+    background-color: #99CCFF;
 }
 .radio,
 .checkbox {
@@ -4349,7 +4349,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .container-fluid > .navbar-collapse {
     margin-right: -15px;
     margin-left: -15px;
-    background-color: #000000;
+    background-color: #C0C0C0;
 }
 @media (min-width: 768px) {
   .container > .navbar-header,
@@ -5580,10 +5580,10 @@ button.list-group-item-danger.active:focus {
   color: inherit;
 }
 .panel-title {
-  margin-top: 0;
-  margin-bottom: 0;
-  font-size: 16px;
-  color: inherit;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 16px;
+    color: #000000;
 }
 .panel-title > a,
 .panel-title > small,
