@@ -14,7 +14,7 @@
 
          <div class="panel-heading">
             <h3 class="panel-title">Formulario Registro</h3>
-        </div>
+        </div> 
 
     
      <div class="form-group">
@@ -39,10 +39,10 @@
         <label>Pais de Nacimiento</label>
     <asp:DropDownList ID="DropDownList1" runat="server">  
   
-  <asp:ListItem Value="valor1">Argentina</asp:ListItem>
-  <asp:ListItem Value="valor2">Brasil</asp:ListItem>
-  <asp:ListItem Value="valor3">Chile</asp:ListItem>
-   <asp:ListItem Value="valor3">Uruguay</asp:ListItem>
+  <asp:ListItem Text="Argentina" Value ="Argentina"></asp:ListItem>
+  <asp:ListItem Text="Brasil" Value="Brasil"></asp:ListItem>
+  <asp:ListItem Text="Chile" Value="Chile"></asp:ListItem>
+   <asp:ListItem Text="Uruguay" Value="Uruguay"></asp:ListItem>
    </asp:DropDownList>  
 
 
@@ -51,9 +51,9 @@
     <div class="form-group">
         <label>Curso en Desarrollo:</label>
     <asp:RadioButtonList ID="miRadioButtonList" runat="server">
-    <asp:ListItem Value="valor1">JAVA</asp:ListItem>
-    <asp:ListItem Value="valor2">.NET</asp:ListItem>
-    <asp:ListItem Value="valor3">Diseño UX/UI</asp:ListItem> 
+    <asp:ListItem Text="JAVA" Value="JAVA"></asp:ListItem>
+    <asp:ListItem Text=".NET" Value=".NET"></asp:ListItem>
+    <asp:ListItem Text="Diseño UX/UI" Value="Diseño UX/UI"></asp:ListItem> 
     </asp:RadioButtonList> <br>
 
 
@@ -61,12 +61,12 @@
     <div class="form-group">
         <label>Conocimientos:</label> 
    <asp:CheckBoxList ID="CheckBoxList1" runat="server">
-   <asp:ListItem>HTML</asp:ListItem>
-   <asp:ListItem>Javascript</asp:ListItem>
-   <asp:ListItem>JQuery</asp:ListItem>
-   <asp:ListItem>CSS</asp:ListItem>
-   <asp:ListItem>.NET</asp:ListItem>
-   <asp:ListItem>SQL Server</asp:ListItem>
+   <asp:ListItem Text="HTML" Value="HTML"></asp:ListItem>
+   <asp:ListItem Text="Javascript" Value="Javascript"></asp:ListItem>
+   <asp:ListItem Text="JQuery" Value="JQuery"></asp:ListItem>
+   <asp:ListItem Text="CSS" Value="CSS"></asp:ListItem>
+   <asp:ListItem Text=".NET" Value=".NET"></asp:ListItem>
+   <asp:ListItem Text="SQL SERVER" Value="SQL SERVER"></asp:ListItem>
    </asp:CheckBoxList> <br>
 
     </div>

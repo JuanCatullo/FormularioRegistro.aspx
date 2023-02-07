@@ -22,6 +22,42 @@ namespace FormularioRegistro.aspx
 
         protected void Enviar_Click(object sender, EventArgs e)
         {
+            if (!Page.IsPostBack)
+            {
+
+            }
+
+        }
+
+        protected void cmdEnviar_Click(object sender, EventArgs e)
+        {
+
+            string sDL;
+            sDL = DropDownList1.SelectedValue;
+
+            string sRBL;
+            sRBL = miRadioButtonList.SelectedValue;
+
+            string sCono0;
+            bool bConocimientos0;
+            bConocimientos0 = CheckBoxList1.Items[0].Selected;
+
+            if (bConocimientos0)
+            {
+                sCono0 = CheckBoxList1.Items[0].Value;
+            }
+
+            if (bConocimientos0)
+            {
+                Utilidades.ShowAlertAjax(this, "Seleccionada", "");
+            }
+            else
+            {
+                Utilidades.ShowAlertAjax(this, "NO Seleccionada", "");
+            }
+
+            
+
             string sRet = "";
             sRet = ValidarControles();
 
