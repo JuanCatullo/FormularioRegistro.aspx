@@ -32,14 +32,16 @@ namespace FormularioRegistro.aspx
             string sRet = "";
             DataTable dt = new DataTable();
 
-            sRet = Utilidades.Datos.ObtenerPaises(ref dt);
+            sRet = Utilidades.Datos.spPaises(ref dt);
+
+            
 
             if (sRet == "")
             {
-                ddlpais.DataValueField = "id";
-                ddlpais.DataTextField = "descripcion";
+                ddlpais.DataValueField = "id_pais";
+                ddlpais.DataTextField = "pais";
                 ddlpais.DataSource = dt;
-              //  ddlpais.DataBind();
+                //ddlpais.DataBind();
             }
             else
             {
@@ -53,14 +55,14 @@ namespace FormularioRegistro.aspx
             string sRet = "";
             DataTable dt = new DataTable();
 
-            sRet = Utilidades.Datos.ObtenerConocimientos(ref dt);
+            sRet = Utilidades.Datos.spObtenerConocimientos(ref dt);
 
             if (sRet == "")
             {
-                ddlpais.DataValueField = "id";
-                ddlpais.DataTextField = "descripcion";
+                ddlpais.DataValueField = "id_concimientos";
+                ddlpais.DataTextField = "conocimientos";
                 ddlpais.DataSource = dt;
-              //  ddlpais.DataBind();
+                //ddlpais.DataBind();
             }
 
         }
@@ -70,14 +72,14 @@ namespace FormularioRegistro.aspx
             string sRet = "";
             DataTable dt = new DataTable();
 
-            sRet = Utilidades.Datos.ObtenerCursos(ref dt);
+            sRet = Utilidades.Datos.spCursos(ref dt);
 
             if (sRet == "")
             {
-                ddlpais.DataValueField = "id";
-                ddlpais.DataTextField = "descripcion";
+                ddlpais.DataValueField = "curso_id";
+                ddlpais.DataTextField = "nombre_curso";
                 ddlpais.DataSource = dt;
-             //   ddlpais.DataBind();
+                //ddlpais.DataBind();
             }
 
         }
@@ -121,7 +123,7 @@ namespace FormularioRegistro.aspx
             }
             if (sCono0 != "")
             {
-            	// Utilidades.ShowAlertAjax(this, sCono0, "");
+            	 //Utilidades.ShowAlertAjax(this, sCono0, "");
             	// Utilidades.ShowAlertAjax(this, sCono0.Remove(sCono0.LastIndexOf(",")), "");
             }
 

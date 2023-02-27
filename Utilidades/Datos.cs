@@ -11,9 +11,10 @@ namespace FormularioRegistro.Utilidades
 {
     public class Datos
     {
+
         #region "combos"
 
-        public static string ObtenerPaises(ref DataTable dt)
+        public static string spPaises(ref DataTable dt)
         {
             SqlConnection MyConnection = default(SqlConnection);
             SqlDataAdapter MyDataAdapter = default(SqlDataAdapter);
@@ -21,7 +22,7 @@ namespace FormularioRegistro.Utilidades
             try
             {
                 MyConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionStringSQL"].ConnectionString);
-                MyDataAdapter = new SqlDataAdapter("Paises", MyConnection);
+                MyDataAdapter = new SqlDataAdapter("spPaises", MyConnection);
                 MyDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
 
 
@@ -35,7 +36,7 @@ namespace FormularioRegistro.Utilidades
             }
         }
 
-        public static string ObtenerConocimientos(ref DataTable dt)
+        public static string spCursos(ref DataTable dt)
         {
             SqlConnection MyConnection = default(SqlConnection);
             SqlDataAdapter MyDataAdapter = default(SqlDataAdapter);
@@ -43,30 +44,7 @@ namespace FormularioRegistro.Utilidades
             try
             {
                 MyConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionStringSQL"].ConnectionString);
-                MyDataAdapter = new SqlDataAdapter("SPConocimientos", MyConnection);
-                MyDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-
-
-                dt = new DataTable();
-                MyDataAdapter.Fill(dt);
-                return "";
-            }
-            catch (Exception ex)
-            {
-                return ex.Message;
-
-            }
-        }
-
-        public static string ObtenerCursos(ref DataTable dt)
-        {
-            SqlConnection MyConnection = default(SqlConnection);
-            SqlDataAdapter MyDataAdapter = default(SqlDataAdapter);
-
-            try
-            {
-                MyConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionStringSQL"].ConnectionString);
-                MyDataAdapter = new SqlDataAdapter("Cursos", MyConnection);
+                MyDataAdapter = new SqlDataAdapter("spCursos", MyConnection);
                 MyDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
 
 
@@ -78,13 +56,31 @@ namespace FormularioRegistro.Utilidades
             {
                 return ex.Message;
             }
-
-            #endregion
-
         }
-    }
 
-}
+        public static string spObtenerConocimientos(ref DataTable dt)
+        {
+            SqlConnection MyConnection = default(SqlConnection);
+            SqlDataAdapter MyDataAdapter = default(SqlDataAdapter);
+
+            try
+            {
+                MyConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionStringSQL"].ConnectionString);
+                MyDataAdapter = new SqlDataAdapter("spObtenerConocimientos", MyConnection);
+                MyDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
 
 
+                dt = new DataTable();
+                MyDataAdapter.Fill(dt);
+                return "";
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+                #endregion          
+            }
+        }
 
+      
+    } }
+    
