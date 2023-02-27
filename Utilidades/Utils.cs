@@ -1,10 +1,14 @@
-﻿using System.Web.UI;
-using System;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
 
-namespace FormularioRegistro.aspx
+namespace ProyectoJuan.Utilidades
 {
-    public class Utilidades
+    public class Utils
     {
+
 
         #region "Javascripts"
         public static string ReplaceEnters(string str)

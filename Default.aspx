@@ -37,12 +37,8 @@
 
     <div class="form-group">
         <label>Pais de Nacimiento</label>
-    <asp:DropDownList ID="DropDownList1" runat="server">  
+    <asp:DropDownList ID="ddlpais" runat="server">  
   
-  <asp:ListItem Text="Argentina" Value ="Argentina"></asp:ListItem>
-  <asp:ListItem Text="Brasil" Value="Brasil"></asp:ListItem>
-  <asp:ListItem Text="Chile" Value="Chile"></asp:ListItem>
-   <asp:ListItem Text="Uruguay" Value="Uruguay"></asp:ListItem>
    </asp:DropDownList>  
 
 
@@ -51,9 +47,7 @@
     <div class="form-group">
         <label>Curso en Desarrollo:</label>
     <asp:RadioButtonList ID="miRadioButtonList" runat="server">
-    <asp:ListItem Text="JAVA" Value="JAVA"></asp:ListItem>
-    <asp:ListItem Text=".NET" Value=".NET"></asp:ListItem>
-    <asp:ListItem Text="Diseño UX/UI" Value="Diseño UX/UI"></asp:ListItem> 
+   
     </asp:RadioButtonList> <br>
 
 
@@ -61,12 +55,7 @@
     <div class="form-group">
         <label>Conocimientos:</label> 
    <asp:CheckBoxList ID="CheckBoxList1" runat="server">
-   <asp:ListItem Text="HTML" Value="HTML"></asp:ListItem>
-   <asp:ListItem Text="Javascript" Value="Javascript"></asp:ListItem>
-   <asp:ListItem Text="JQuery" Value="JQuery"></asp:ListItem>
-   <asp:ListItem Text="CSS" Value="CSS"></asp:ListItem>
-   <asp:ListItem Text=".NET" Value=".NET"></asp:ListItem>
-   <asp:ListItem Text="SQL SERVER" Value="SQL SERVER"></asp:ListItem>
+  
    </asp:CheckBoxList> <br>
 
     </div>

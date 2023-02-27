@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Web;
@@ -17,6 +18,67 @@ namespace FormularioRegistro.aspx
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!Page.IsPostBack) {
+                CargarPaises();
+                CargarCurso();
+                CargarConocimientos();
+            }
+
+                
+        }
+
+        void CargarPaises()
+        {
+            string sRet = "";
+            DataTable dt = new DataTable();
+
+            sRet = Utilidades.Datos.ObtenerPaises(ref dt);
+
+            if (sRet == "")
+            {
+                ddlpais.DataValueField = "id";
+                ddlpais.DataTextField = "descripcion";
+                ddlpais.DataSource = dt;
+              //  ddlpais.DataBind();
+            }
+            else
+            {
+                Response.Write(sRet);
+            }
+
+        }
+
+        void CargarConocimientos()
+        {
+            string sRet = "";
+            DataTable dt = new DataTable();
+
+            sRet = Utilidades.Datos.ObtenerConocimientos(ref dt);
+
+            if (sRet == "")
+            {
+                ddlpais.DataValueField = "id";
+                ddlpais.DataTextField = "descripcion";
+                ddlpais.DataSource = dt;
+              //  ddlpais.DataBind();
+            }
+
+        }
+
+        void CargarCurso()
+        {
+            string sRet = "";
+            DataTable dt = new DataTable();
+
+            sRet = Utilidades.Datos.ObtenerCursos(ref dt);
+
+            if (sRet == "")
+            {
+                ddlpais.DataValueField = "id";
+                ddlpais.DataTextField = "descripcion";
+                ddlpais.DataSource = dt;
+             //   ddlpais.DataBind();
+            }
 
         }
 
@@ -33,30 +95,49 @@ namespace FormularioRegistro.aspx
         {
 
             string sDL;
-            sDL = DropDownList1.SelectedValue;
+            sDL = ddlpais.SelectedValue;
 
             string sRBL;
             sRBL = miRadioButtonList.SelectedValue;
 
-            string sCono0;
-            bool bConocimientos0;
-            bConocimientos0 = CheckBoxList1.Items[0].Selected;
+            string sCono0 = "";
 
-            if (bConocimientos0)
+            //for (int i = 0; i < CheckBoxList1.Items.Count; i++)
+            //{
+            	//if (CheckBoxList1.Items[i].Selected)
+            	//{
+            		//sCono0 += CheckBoxList1.Items[i].Value.ToString() + ",";
+            	//}
+
+            //}
+
+            foreach (ListItem item in CheckBoxList1.Items)
             {
-                sCono0 = CheckBoxList1.Items[0].Value;
+            	if (item.Selected)
+            	{
+                    sCono0 += item.Value.ToString() + ",";
+            	}
+
+            }
+            if (sCono0 != "")
+            {
+            	// Utilidades.ShowAlertAjax(this, sCono0, "");
+            	// Utilidades.ShowAlertAjax(this, sCono0.Remove(sCono0.LastIndexOf(",")), "");
             }
 
-            if (bConocimientos0)
+            if (sCono0 != "")
             {
-                Utilidades.ShowAlertAjax(this, "Seleccionada", "");
-            }
-            else
-            {
-                Utilidades.ShowAlertAjax(this, "NO Seleccionada", "");
+
+            	String[] separator = { "," };
+            	String[] strlist = sCono0.Split(separator, StringSplitOptions.RemoveEmptyEntries);
+
+            	foreach (String s in strlist)
+            	{
+            		// Utilidades.ShowAlertAjax(this, s, "");
+            	}
             }
 
-            
+
 
             string sRet = "";
             sRet = ValidarControles();
