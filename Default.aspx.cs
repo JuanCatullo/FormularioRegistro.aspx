@@ -59,10 +59,10 @@ namespace FormularioRegistro.aspx
 
             if (sRet == "")
             {
-                ddlpais.DataValueField = "id_concimientos";
-                ddlpais.DataTextField = "conocimientos";
-                ddlpais.DataSource = dt;
-                ddlpais.DataBind();
+                CheckBoxList1.DataValueField = "id_concimientos";
+                CheckBoxList1.DataTextField = "conocimientos";
+                CheckBoxList1.DataSource = dt;
+                CheckBoxList1.DataBind();
             }
 
         }
@@ -76,10 +76,10 @@ namespace FormularioRegistro.aspx
 
             if (sRet == "")
             {
-                ddlpais.DataValueField = "curso_id";
-                ddlpais.DataTextField = "nombre_curso";
-                ddlpais.DataSource = dt;
-                ddlpais.DataBind();
+                miRadioButtonList.DataValueField = "curso_id";
+                miRadioButtonList.DataTextField = "nombre_curso";
+                miRadioButtonList.DataSource = dt;
+                miRadioButtonList.DataBind();
             }
 
         }
@@ -89,7 +89,7 @@ namespace FormularioRegistro.aspx
             string sRet = "";
             DataTable dt = new DataTable();
 
-            sRet = Utilidades.Datos.spObtenerUsuariosRegistrados(ref dt);
+            sRet = Utilidades.Datos.ObtenerUsuariosRegistrados(ref dt);
 
 
         }

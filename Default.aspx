@@ -42,7 +42,7 @@
    </asp:DropDownList>  
 
 
-    </div>  
+    </div>
 
     <div class="form-group">
         <label>Curso en Desarrollo:</label>
@@ -52,6 +52,8 @@
 
 
     </div>
+
+
     <div class="form-group">
         <label>Conocimientos:</label> 
    <asp:CheckBoxList ID="CheckBoxList1" runat="server">

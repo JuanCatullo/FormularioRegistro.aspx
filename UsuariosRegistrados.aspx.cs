@@ -23,7 +23,7 @@ namespace FormularioRegistro.aspx
             string sRet = "";
             DataTable dt = new DataTable();
 
-            sRet = Utilidades.Datos.spObtenerUsuariosRegistrados(ref dt);
+            sRet = Utilidades.Datos.ObtenerUsuariosRegistrados(ref dt);
 
 
 
