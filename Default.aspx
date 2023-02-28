@@ -33,7 +33,7 @@
     <label for="dni">DNI:</label>
         <asp:TextBox ID="txtdni" CssClass ="form-control" runat="server" ValidationGroup="Registro"></asp:TextBox>
         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtdni" ValidationGroup="Registro" ErrorMessage="Falta DNI" Display="None"  ></asp:RequiredFieldValidator>
-    </div>
+    </div> 
 
     <div class="form-group">
         <label>Pais de Nacimiento</label>
@@ -48,7 +48,7 @@
         <label>Curso en Desarrollo:</label>
     <asp:RadioButtonList ID="miRadioButtonList" runat="server">
    
-    </asp:RadioButtonList> <br>
+    </asp:RadioButtonList> 
 
 
     </div>
@@ -56,7 +56,7 @@
         <label>Conocimientos:</label> 
    <asp:CheckBoxList ID="CheckBoxList1" runat="server">
   
-   </asp:CheckBoxList> <br>
+   </asp:CheckBoxList> 
 
     </div>
    

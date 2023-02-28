@@ -14,7 +14,29 @@ namespace FormularioRegistro.Utilidades
 
         #region "combos"
 
-        public static string spPaises(ref DataTable dt)
+        public static string ObtenerUsuariosRegistrados(ref DataTable dt)
+        {
+            SqlConnection MyConnection = default(SqlConnection);
+            SqlDataAdapter MyDataAdapter = default(SqlDataAdapter);
+
+            try
+            {
+                MyConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionStringSQL"].ConnectionString);
+                MyDataAdapter = new SqlDataAdapter("spObtenerUsuariosRegistrados", MyConnection);
+                MyDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+
+
+                dt = new DataTable();
+                MyDataAdapter.Fill(dt);
+                return "";
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+        }
+
+        public static string ObtenerPaises(ref DataTable dt)
         {
             SqlConnection MyConnection = default(SqlConnection);
             SqlDataAdapter MyDataAdapter = default(SqlDataAdapter);
@@ -36,7 +58,7 @@ namespace FormularioRegistro.Utilidades
             }
         }
 
-        public static string spCursos(ref DataTable dt)
+        public static string ObtenerCursos(ref DataTable dt)
         {
             SqlConnection MyConnection = default(SqlConnection);
             SqlDataAdapter MyDataAdapter = default(SqlDataAdapter);
@@ -58,7 +80,7 @@ namespace FormularioRegistro.Utilidades
             }
         }
 
-        public static string spObtenerConocimientos(ref DataTable dt)
+        public static string ObtenerConocimientos(ref DataTable dt)
         {
             SqlConnection MyConnection = default(SqlConnection);
             SqlDataAdapter MyDataAdapter = default(SqlDataAdapter);
@@ -81,6 +103,6 @@ namespace FormularioRegistro.Utilidades
             }
         }
 
-      
+       
     } }
     

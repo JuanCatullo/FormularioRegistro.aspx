@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -11,6 +12,34 @@ namespace FormularioRegistro.aspx
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Page.IsPostBack)
+            {
+                CargarUsuariosRegistrados();
+            }
+        }
+
+        void CargarUsuariosRegistrados()
+        {
+            string sRet = "";
+            DataTable dt = new DataTable();
+
+            sRet = Utilidades.Datos.spObtenerUsuariosRegistrados(ref dt);
+
+
+
+            if (sRet == "")
+            {
+
+                gvUsuarios.DataSource= dt;
+                gvUsuarios.DataBind();
+
+            }
+            else
+            {
+                Utilidades.Utils.ShowAlertAjax(this.Page, sRet, "");
+            }
+
+
 
         }
     }

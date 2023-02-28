@@ -1676,12 +1676,13 @@ pre code {
 .col-sm-12,
 .col-md-12,
 .col-lg-12 {
-  position: relative;
-  min-height: 1px;
-  padding-right: 15px;
-  padding-left: 15px;
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
     top: 11px;
     left: 91px;
+    background-color: #FFFFFF;
 }
 .col-xs-1,
 .col-xs-2,
@@ -2358,7 +2359,7 @@ pre code {
   }
 }
 table {
-    background-color: #C0C0C0;
+    background-color: #000000;
     text-align: center;
 }
 table col[class*="col-"] {

@@ -32,7 +32,7 @@ namespace FormularioRegistro.aspx
             string sRet = "";
             DataTable dt = new DataTable();
 
-            sRet = Utilidades.Datos.spPaises(ref dt);
+            sRet = Utilidades.Datos.ObtenerPaises(ref dt);
 
             
 
@@ -41,7 +41,7 @@ namespace FormularioRegistro.aspx
                 ddlpais.DataValueField = "id_pais";
                 ddlpais.DataTextField = "pais";
                 ddlpais.DataSource = dt;
-                //ddlpais.DataBind();
+                ddlpais.DataBind();
             }
             else
             {
@@ -55,14 +55,14 @@ namespace FormularioRegistro.aspx
             string sRet = "";
             DataTable dt = new DataTable();
 
-            sRet = Utilidades.Datos.spObtenerConocimientos(ref dt);
+            sRet = Utilidades.Datos.ObtenerConocimientos(ref dt);
 
             if (sRet == "")
             {
                 ddlpais.DataValueField = "id_concimientos";
                 ddlpais.DataTextField = "conocimientos";
                 ddlpais.DataSource = dt;
-                //ddlpais.DataBind();
+                ddlpais.DataBind();
             }
 
         }
@@ -72,15 +72,25 @@ namespace FormularioRegistro.aspx
             string sRet = "";
             DataTable dt = new DataTable();
 
-            sRet = Utilidades.Datos.spCursos(ref dt);
+            sRet = Utilidades.Datos.ObtenerCursos(ref dt);
 
             if (sRet == "")
             {
                 ddlpais.DataValueField = "curso_id";
                 ddlpais.DataTextField = "nombre_curso";
                 ddlpais.DataSource = dt;
-                //ddlpais.DataBind();
+                ddlpais.DataBind();
             }
+
+        }
+
+        void CargarUsuariosRegistrados()
+        {
+            string sRet = "";
+            DataTable dt = new DataTable();
+
+            sRet = Utilidades.Datos.spObtenerUsuariosRegistrados(ref dt);
+
 
         }
 
