@@ -42,5 +42,10 @@ namespace FormularioRegistro.aspx
 
 
         }
+
+        protected void gvUsuarios_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

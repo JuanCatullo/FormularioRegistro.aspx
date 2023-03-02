@@ -3,7 +3,7 @@
     <div class="row">
         <div class="col-md-12">
 
-            <asp:GridView ID="gvUsuarios" runat="server" AutoGenerateColumns="False" DataKeyNames="id">
+            <asp:GridView ID="gvUsuarios" runat="server" AutoGenerateColumns="False" DataKeyNames="id" OnSelectedIndexChanged="gvUsuarios_SelectedIndexChanged">
                 <Columns>
                     <asp:BoundField DataField="id" HeaderText="ID" />
                     <asp:BoundField DataField="nombre" HeaderText="Nombre" />

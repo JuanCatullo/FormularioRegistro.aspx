@@ -12,7 +12,11 @@ using System.Xml.Linq;
 
 
 namespace FormularioRegistro.aspx
+
+
 {
+
+
     public partial class _Default : Page
     {
 

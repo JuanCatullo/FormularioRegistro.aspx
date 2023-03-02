@@ -1681,8 +1681,9 @@ pre code {
     padding-right: 15px;
     padding-left: 15px;
     top: 11px;
-    left: 91px;
+    left: 20px;
     background-color: #FFFFFF;
+    width: 1007px;
 }
 .col-xs-1,
 .col-xs-2,
@@ -2361,6 +2362,7 @@ pre code {
 table {
     background-color: #000000;
     text-align: center;
+    margin-top: 0px;
 }
 table col[class*="col-"] {
   position: static;
