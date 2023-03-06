@@ -12,7 +12,7 @@ namespace FormularioRegistro.aspx
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Page.IsPostBack)
+            if (!Page.IsPostBack)
             {
                 CargarUsuariosRegistrados();
             }
@@ -43,9 +43,25 @@ namespace FormularioRegistro.aspx
 
         }
 
+        protected void gvUsuarios_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName.ToString() == "EDITAR")
+            {
+                //Utils.ShowAlertAjax(this.Page, e.CommandArgument.ToString(), "");
+                Response.Redirect("FormularioRegistro.aspx" + "?usuario_id=" + e.CommandArgument.ToString());
+            }
+
+            if (e.CommandName.ToString() == "ELIMINAR")
+            {
+
+            }
+        }
+
         protected void gvUsuarios_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
     }
 }
+
+    

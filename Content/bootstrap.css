@@ -1073,7 +1073,7 @@ th {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     background-color: #C0C0C0;
-    color: #C0C0C0;
+    color: #337ab7;
 }
 *:before,
 *:after {
@@ -2360,9 +2360,11 @@ pre code {
   }
 }
 table {
+    font: 100% Arial, Helvetica, sans-serif;
     background-color: #000000;
     text-align: center;
     margin-top: 0px;
+    color: #FFFFFF;
 }
 table col[class*="col-"] {
   position: static;
