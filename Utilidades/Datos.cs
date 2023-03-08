@@ -105,9 +105,10 @@ namespace FormularioRegistro.Utilidades
                 return ex.Message;
                 #endregion          
             }
+        }
 
-                public static string EliminarUsuario(int iId)
-                {
+            public static string EliminarUsuario(int iId)
+            {
                 SqlConnection MyConnection = default(SqlConnection);
                 SqlCommand MyCommand = default(SqlCommand);
 
@@ -133,7 +134,7 @@ namespace FormularioRegistro.Utilidades
                     return ex.Message;
                 }
 
-                }
+            }
 
 
             public static string ActualizarUsuario(int iId, string txtname, string txtlastname, int txtdni, string ddlpais, string miRadioButtonList, string email, DateTime Fechanac, string otros, string password, string confirm_password)
@@ -195,10 +196,7 @@ namespace FormularioRegistro.Utilidades
 
 
 
-        }
+    }
 
-        internal static string EliminarUsuario(int v)
-        {
-            throw new NotImplementedException();
-        }
+        
     }
