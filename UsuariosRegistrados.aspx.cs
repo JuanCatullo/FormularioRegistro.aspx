@@ -1,6 +1,9 @@
-﻿using System;
+﻿using FormularioRegistro.Utilidades;
+using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -30,13 +33,13 @@ namespace FormularioRegistro.aspx
             if (sRet == "")
             {
 
-                gvUsuarios.DataSource= dt;
+                gvUsuarios.DataSource = dt;
                 gvUsuarios.DataBind();
 
             }
             else
             {
-                Utilidades.Utils.ShowAlertAjax(this.Page, sRet, "");
+                Utils.ShowAlertAjax(this.Page, sRet, "");
             }
 
 
@@ -49,19 +52,37 @@ namespace FormularioRegistro.aspx
             {
                 //Utils.ShowAlertAjax(this.Page, e.CommandArgument.ToString(), "");
                 Response.Redirect("FormularioRegistro.aspx" + "?usuario_id=" + e.CommandArgument.ToString());
+
             }
 
             if (e.CommandName.ToString() == "ELIMINAR")
             {
+                //LLAMO A LA FUNCION QUE ELIMINA AL USUARIO
+                string sRetorno = "";
+                sRetorno = Datos.EliminarUsuario(Convert.ToInt32(e.CommandArgument.ToString()));
+
+                if (sRetorno == "")
+                {
+                    Utils.ShowAlertAjax(this.Page, "Usuario eliminado exitosamente", "");
+                    //RECARGO LA GRILLA ASI MUESTRA LOS CAMBIOS
+                    CargarUsuariosRegistrados();
+                }
+                else
+                {
+                    Utils.ShowAlertAjax(this.Page, "Error al borrar: " + sRetorno, "");
+                }
+            }
+
+            
 
             }
-        }
 
-        protected void gvUsuarios_SelectedIndexChanged(object sender, EventArgs e)
-        {
+
+            
+
+            }
 
         }
-    }
-}
+    
 
     
