@@ -9,6 +9,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Xml.Linq;
 
 namespace FormularioRegistro.aspx
 {
@@ -22,26 +23,24 @@ namespace FormularioRegistro.aspx
             }
         }
 
+
         void CargarUsuariosRegistrados()
         {
-            string sRet = "";
+            string sRett = "";
             DataTable dt = new DataTable();
 
-            sRet = Utilidades.Datos.ObtenerUsuariosRegistrados(ref dt);
+            sRett = Utilidades.Datos.ObtenerUsuariosRegistrados(ref dt);
 
-
-
-            if (sRet == "")
+            if (sRett == "")
             {
-
+                //cono.DataValueField = "id";
+                //cono.DataTextField = "descripcion";
+                //cono.DataSource = dt;
+                //cono.DataBind();
                 gvUsuarios.DataSource = dt;
                 gvUsuarios.DataBind();
+            }
 
-            }
-            else
-            {
-                Utils.ShowAlertAjax(this.Page, sRet, "");
-            }
 
 
 
@@ -52,7 +51,7 @@ namespace FormularioRegistro.aspx
             if (e.CommandName.ToString() == "EDITAR")
             {
                 //Utils.ShowAlertAjax(this.Page, e.CommandArgument.ToString(), "");
-                Response.Redirect("FormularioRegistro.aspx" + "?usuario_id=" + e.CommandArgument.ToString());
+                Response.Redirect("Default.aspx" + "?usuario_id=" + e.CommandArgument.ToString());
 
             }
 
@@ -60,7 +59,7 @@ namespace FormularioRegistro.aspx
             {
                 //LLAMO A LA FUNCION QUE ELIMINA AL USUARIO
                 string sRetorno = "";
-                sRetorno = Datos.EliminarUsuario(Convert.ToInt32(e.CommandArgument.ToString()));
+                sRetorno = Datos.EliminarUsuario(Convert.ToInt32(ViewState["ID_USUARIO"]), txtname.Text.Trim(), txtlastname.Text.Trim(), txtdni.Text.Trim(), Convert.ToInt32(ddlpais.SelectedValue), Convert.ToInt32(miRadioButtonList.SelectedValue), email.Text.Trim(), Fechanac.Text.Trim(), CheckBoxList1.Text.Trim(), password.Text.Trim());
 
                 if (sRetorno == "")
                 {
@@ -76,14 +75,14 @@ namespace FormularioRegistro.aspx
 
             
 
-            }
+        }
 
 
             
 
-            }
+    }
 
-        }
+}
     
 
     

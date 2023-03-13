@@ -70,9 +70,12 @@
 
     <div class="form-group">
     <label for="birthdate">Fecha de nacimiento:</label>
-        <asp:TextBox ID="Fechanac" CssClass="form-control" runat="server" ControlToValidate="fechanac" ValidationGroup="Registro" ErrorMessage="Falta Fecha de Nacimiento"></asp:TextBox>
+        <asp:TextBox ID="Fechanac" CssClass="form-control" TextMode="Date" runat="server" ControlToValidate="fechanac" ValidationGroup="Registro" ErrorMessage="Falta Fecha de Nacimiento"></asp:TextBox>
         <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="Fechanac" ValidationGroup="Registro" ErrorMessage="Falta Ingresar Fecha de Nacimiento" Display="None"  ></asp:RequiredFieldValidator>
     </div> 
+
+         <div class ="form-group">
+          
 
     <div class="form-group">
     <label for="message">Otros conocimientos:</label> 
@@ -95,7 +98,7 @@
       
        <div class="form-group">
            
-            <asp:Button ID="Enviar" runat="server" Text="Enviar" OnClick="Enviar_Click" ValidationGroup="Registro" />
+            <asp:Button ID="Enviar" runat="server" Text="Enviar" OnClick="cmdEnviar_Click" ValidationGroup="Registro" />
 
             <asp:Button ID="Cancelar" runat="server" Text="Cancelar" />
 
